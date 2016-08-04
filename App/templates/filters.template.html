@@ -1,0 +1,17 @@
+<div class="col-md-3" style="margin-left:-5px;margin-top:120px;position:fixed" >
+
+  <span class="list-group-item active" style="width:320px;margin-left:-20px;">Select Brand dude</span>
+  <div  style="text-align:center;overflow-y:scroll;width:320px;height:200px;margin-left:-20px;">
+    <div class="list-group" ng-repeat="phone in  $ctrl.phones | unique:'comp'" style="margin-top:0px;">
+      <button ng-click="$ctrl.selected(phone.comp)" ui-sref="home({company:phone.comp,id:phone.id})" ng-model="phone.checked" ng-checked="phone.checked"  class="list-group-item list-group-item-success">{{phone.comp}}</button>
+    </div>
+  </div>
+
+  <span class="list-group-item active" style="width:320px;margin-left:-20px;margin-top:-10px;">Select Device</span>
+  <div style="text-align:center;width:320px;margin-left:-20px;overflow-y:scroll;height:250px; ">
+    <div class="list-group" ng-repeat="phone in $ctrl.devices | orderBy:$ctrl.orderProp ">
+        <button ui-sref="home({company:phone.comp,id:phone.id})" class="list-group-item  list-group-item-success">{{phone.name}}</button>
+
+    </div>
+  </div>
+</div>

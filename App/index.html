@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mobileX">
+<head>
+  <title>This is Sparta</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-compatible" content="IE-edge">
+  <meta content="view" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body id="wrapper"  >
+
+  <nav class="navbar navbar-fixed-top" style="background-color:#337ab7;margin:0px;">
+    <div id="wrapper" class="container" style="">
+      <div class="navbar-header" >
+        <a class="navbar-brand"style="color:white;font-size:25px;" >Spartan</a>
+
+      </div>
+      <ul class="nav navbar-right">
+        <div class="form-group"  >
+          <form class="navbar-form" role="search" >
+            <div class="input-group">
+              <span>
+                <input type="text" class="form-control" style="background-color:white;margin-top:2px;"  placeholder="Global Search..!">
+              </span>
+              <span>
+                <button class="btn btn-success"  type="submit"><i class="glyphicon glyphicon-search"></i></button>
+              </span>
+            </div>
+          </form>
+      </div>
+    </ul>
+    </div>
+  </nav>
+  <nav class="navbar navbar-fixed-top" style="margin-top:56px;margin-bottom:0px;background:white;height:60px;">
+    <div  id="wrapper" class="container" style="">
+      <div class="navbar-header" >
+        <a class="navbar-brand"style="color:white;font-size:25px;"></a>
+
+          <ul class="nav navbar-left" style="width:230px;">
+            <div class="form-group"  >
+              <form class="navbar-form" role="search" style="background:transparent;margin-left:-100px;" >
+                <div class="input-group">
+                  <span>
+                    <input type="text" class="form-control"  placeholder="Search..!" style="width:180px;margin-left:20px;margin-top:2px; ">
+                  </span>
+                  <span>
+                    <button class="btn btn-default"  type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                  </span>
+                </div>
+              </form>
+          </div>
+        </ul>
+          <button type="Add" class="btn btn-success"  style="margin-top:8px;margin-left:-50px;" ui-sref="add" >Add</button>
+    </div >
+    <div >
+      <span style="margin-top:-25px;margin-left:30px;font-size:35px;margin-right:790px;"></span>
+      <button style="margin-top:-20px;" class="btn btn-success" type="update" ui-sref="update">Update</span>
+    </div>
+  </div>
+
+  </nav>
+
+  <div class="container-fluid">
+    <div ui-view="filters"></div>
+    <div ui-view></div>
+    <div ui-view="specs"></div>
+
+  </div>
+
+<link rel="stylesheet" href="app.css" />
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="app.module.js"></script>
+<script src="app.config.js"></script>
+<script src="core/core.module.js"></script>
+
+<script src="core/checkmark/checkmark.filter.js"></script>
+<script src="core/null/null-module.js"></script>
+<script src="core/null/null-filter.js"></script>
+<script src="components/phones-list.module.js"></script>
+<script src="components/add.component.js"></script>
+<script src="services/content-service.js"></script>
+<script src="components/filter.component.js"></script>
+<script src="components/update.component.js"></script>
+<script src="components/specs.component.js"></script>
+<script src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
+
+
+</body>
+</html>

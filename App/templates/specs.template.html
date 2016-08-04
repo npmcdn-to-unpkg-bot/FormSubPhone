@@ -1,0 +1,117 @@
+<div class="col-md-9" style="margin-left:330px;margin-top:80px;">
+  <div class="phone-img" style="margin-left: -30px;margin-top:50px;padding-left:-170px;" >
+    <img ng-src="{{$ctrl.mainImageUrl}}" class="phone img-rounded"  />
+  </div>
+
+  <h1 style="margin-left:-370px;margin-top:-25px;">{{$ctrl.phone.name}}</h1>
+
+  <p style="margin-left:-30px;">{{$ctrl.phone.description}}</p>
+
+  <ul class="phone-thumbs">
+    <li ng-repeat="img in $ctrl.phone.images">
+      <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
+    </li>
+  </ul>
+
+  <ul class="specs" style="inline-block">
+    <li>
+      <span>Availability and Networks</span>
+      <dl>
+        <dt>Availability</dt>
+        <dd ng-repeat="availability in $ctrl.phone.availability">{{availability | checknull }}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Battery</span>
+      <dl>
+        <dt>Type</dt>
+        <dd>{{$ctrl.phone.battery.type | checknull  }}</dd>
+        <dt>Talk Time</dt>
+        <dd>{{$ctrl.phone.battery.talkTime | checknull  }}</dd>
+        <dt>Standby time (max)</dt>
+        <dd>{{$ctrl.phone.battery.standbyTime | checknull  }}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Storage and Memory</span>
+      <dl>
+        <dt>RAM</dt>
+        <dd>{{$ctrl.phone.storage.ram | checknull  }}</dd>
+        <dt>Internal Storage</dt>
+        <dd>{{$ctrl.phone.storage.flash | checknull  }}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Connectivity</span>
+      <dl>
+        <dt>Network Support</dt>
+        <dd>{{$ctrl.phone.connectivity.cell | checknull  }}</dd>
+        <dt>WiFi</dt>
+        <dd>{{$ctrl.phone.connectivity.wifi | checknull  }}</dd>
+        <dt>Bluetooth</dt>
+        <dd>{{$ctrl.phone.connectivity.bluetooth | checknull }}</dd>
+        <dt>Infrared</dt>
+        <dd>{{$ctrl.phone.connectivity.infrared | checkmark}}</dd>
+        <dt>GPS</dt>
+        <dd>{{$ctrl.phone.connectivity.gps| checkmark}}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Android</span>
+      <dl>
+        <dt>OS Version</dt>
+        <dd>{{$ctrl.phone.android.os | checknull  }}</dd>
+        <dt>UI</dt>
+        <dd>{{$ctrl.phone.android.ui | checknull  }}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Size and Weight</span>
+      <dl>
+        <dt>Dimensions</dt>
+        <dd ng-repeat="dim in $ctrl.phone.sizeAndWeight.dimensions">{{dim | checknull }}</dd>
+        <dt>Weight</dt>
+        <dd>{{$ctrl.phone.sizeAndWeight.weight | checknull  }}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Display</span>
+      <dl>
+        <dt>Screen size</dt>
+        <dd>{{$ctrl.phone.display.screenSize | checknull  }}</dd>
+        <dt>Screen resolution</dt>
+        <dd>{{$ctrl.phone.display.screenResolution | checknull  }}</dd>
+        <dt>Touch screen</dt>
+        <dd>{{$ctrl.phone.display.touchScreen| checkmark}}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Hardware</span>
+      <dl>
+        <dt>CPU</dt>
+        <dd>{{$ctrl.phone.hardware.cpu | checknull  }}</dd>
+        <dt>USB</dt>
+        <dd>{{$ctrl.phone.hardware.usb | checknull  }}</dd>
+        <dt>Audio / headphone jack</dt>
+        <dd>{{$ctrl.phone.hardware.audioJack | checknull  }}</dd>
+        <dt>FM Radio</dt>
+        <dd>{{$ctrl.phone.hardware.fmRadio| checkmark}}</dd>
+        <dt>Accelerometer</dt>
+        <dd>{{$ctrl.phone.hardware.accelerometer| checkmark }}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Camera</span>
+      <dl>
+        <dt>Primary</dt>
+        <dd>{{$ctrl.phone.camera.primary | checknull  }}</dd>
+        <dt>Features</dt>
+        <dd>{{$ctrl.phone.camera.features.join(', ') | checknull  }}</dd>
+      </dl>
+    </li>
+    <li>
+      <span>Additional Features</span>
+      <dd>{{$ctrl.phone.additionalFeatures | checknull }}</dd>
+    </li>
+  </ul>
+</div>
